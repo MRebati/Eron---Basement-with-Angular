@@ -1,0 +1,81 @@
+<app-bread-crump [BreadCrump]="breadCrump"></app-bread-crump>
+
+<div class="wrapper wrapper-content animated fadeInRight">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="ibox">
+        <div class="ibox-title">
+          <h4>ثبت صفحه جدید</h4>
+        </div>
+        <div class="ibox-content">
+          <form class="form-horizontal" id="form" [formGroup]="form" (ngSubmit)="save(form)">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group" [ngClass]="{'has-error':!form.controls['title'].valid  && form.controls['title'].touched}">
+                  <label class="col-md-3 control-label">عنوان</label>
+
+                  <div class="col-md-9">
+                    <input type="text" class="form-control" name="title" [formControl]="form.controls['title']">
+                  </div>
+                </div>
+
+                <div class="form-group" [ngClass]="{'has-error':!form.controls['slug'].valid  && form.controls['slug'].touched}">
+                  <label class="col-md-3 control-label">آدرس صفحه</label>
+
+                  <div class="col-md-9">
+                    <input type="text" class="form-control money" name="slug" [formControl]="form.controls['slug']">
+                  </div>
+                </div>
+
+                <div class="form-group" [ngClass]="{'has-error':!form.controls['keywords'].valid  && form.controls['keywords'].touched}">
+                  <label class="col-md-3 control-label">کلمات کلیدی</label>
+
+                  <div class="col-md-9">
+                    <input type="text" tagsinput class="form-control" name="keywords" [formControl]="form.controls['keywords']">
+                  </div>
+                </div>
+
+              </div>
+              <div class="col-md-6">
+
+                <div class="form-group" [ngClass]="{'has-error':!form.controls['description'].valid  && form.controls['description'].touched}">
+                  <label class="col-md-3 control-label">توضیحات</label>
+
+                  <div class="col-md-9">
+                    <textarea name="description" [formControl]="form.controls['description']" class="form-control" id="" cols="30" rows="7"></textarea>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <div class="hr-line-dashed"></div>
+
+            <div class="row">
+              <div class="col-md-12">
+                  <div class="form-group" [ngClass]="{'has-error':!form.controls['content'].valid  && form.controls['content'].touched}">
+                      <div class="col-md-12">
+                        <textarea name="content" summernote [formControl]="form.controls['content']" class="form-control" id="" cols="30" rows="7"></textarea>
+                      </div>
+                    </div>
+              </div>
+            </div>
+
+            <div class="hr-line-dashed"></div>
+            <div class="row">
+              <div class="col-md-12 text-left">
+                <a class="btn btn-default btn-md btn-outline" routerLink="/controlpanel/pages">انصراف</a>
+                <button class="btn btn-primary btn-md" type="button" (click)="save(form)" [disabled]="form.invalid" [ladda]="submitting">
+                  <i class="fa fa-save"></i> ذخیره
+                </button>
+
+                <button [disabled]="form.invalid" type="button" (click)="saveAndNew(form)" class="btn btn-primary btn-md" [ladda]="submitting">
+                  <i class="fa fa-save"></i> ذخیره و جدید
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

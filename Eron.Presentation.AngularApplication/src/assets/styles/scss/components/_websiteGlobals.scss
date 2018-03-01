@@ -1,0 +1,335 @@
+/*===================================================================================*/
+/*  7. Category Page
+/*===================================================================================*/
+
+/**======= 7.1. Refine Search Category =======**/
+.category-list-thumb, .category-list { margin-bottom:15px; }
+.category-list-thumb > div {
+	text-align:center;
+	vertical-align:top;
+	margin-bottom:10px;
+}
+.category-list-thumb > div img {
+	max-width:100%!important;
+	border:1px solid #dddddd;
+	padding:3px;
+}
+.category-list .div a {
+	text-decoration: underline;
+	font-weight: bold;
+}
+/**======= 7.2. Grid-List Icon =======**/
+#list-view, #grid-view {
+	font-size:18px;
+	padding:0;
+	background:none;
+	margin-right:10px;
+	color:#555;
+}
+#list-view:hover, #grid-view:hover { color:#000; }
+#list-view:active, #grid-view:active {
+	color:#444;
+	box-shadow:none;
+}
+#list-view.selected, #grid-view.selected {
+	color:#999;
+	cursor:default;
+}
+/**======= 7.3. Produc Thumb =======**/
+.product-filter {
+	border:1px solid #EAEAEA;
+	background:#F6F6F6;
+	padding:6px 5px;
+	line-height:25px;
+}
+.product-filter .form-control {
+	padding:2px 12px;
+	height:auto;
+}
+.product-list.row, .products-category.row { margin:0; }
+/* Carousel */
+.owl-carousel { margin-bottom:20px; }
+.owl-carousel .product-thumb .image { margin-bottom:5px; }
+.owl-carousel .product-thumb {
+	padding:7px;
+	margin:0px 3px 0px 0px;
+	position:relative;
+	text-align: center;
+	border:3px solid transparent;
+}
+@media only screen and (min-width:1025px) {
+.owl-carousel .product-thumb:hover {
+border-color:#eae9e9;
+}
+}
+.carousel-caption {
+	color: #FFFFFF;
+	text-shadow: 0 1px 0 #000000;
+}
+.carousel-control .icon-prev:before {
+	content: '\f053';
+	font-family: FontAwesome;
+}
+.carousel-control .icon-next:before {
+	content: '\f054';
+	font-family: FontAwesome;
+}
+/* Product Thumb */
+.product-thumb .image { text-align: center; }
+.product-thumb .image a { display: block; }
+.product-thumb .image a img { display:inline-block; }
+.product-thumb h4 {
+	margin:0;
+	padding-bottom:0px;
+}
+.product-thumb h4 a {
+	font-size: 17px;
+	line-height:18px;
+	text-decoration: none;
+	display:inline-block;
+	margin:0 auto;
+	padding:0px;
+	color:#333;
+}
+.product-thumb h4 a:hover { text-decoration:underline; }
+.product-thumb .button-group button { border: none; }
+.product-thumb .button-group .btn-primary {
+	padding:4px 8px;
+	margin-bottom:7px;
+	font-size: 15px;
+	height:auto;
+	text-transform:uppercase;
+	line-height:normal;
+}
+.product-thumb .button-group .add-to-links button {
+	background:none;
+	color:#666;
+	font-size:15px;
+}
+.product-thumb .button-group .add-to-links button:hover {
+	color:#3e7cb4;
+	cursor: pointer;
+}
+.product-thumb .rating { padding-bottom:7px; }
+.product-thumb .rating span { vertical-align:top; }
+.product-thumb .price-tax {
+	color: #999;
+	font-size: 12px;
+	display: block;
+	font-weight:normal;
+}
+.product-thumb .price {
+	margin:10px 0;
+	font-size:13px;
+	font-weight: bold;
+}
+.price-old {
+	color: #F00;
+	text-decoration: line-through;
+	font-weight:normal;
+	font-size:12px;
+}
+.price-new { font-weight: bold; }
+.price, .price-new {color:#3e7cb4;direction: rtl;}
+.saving {
+	background:#f12b63;
+	border-radius: 100% 100% 100% 100%;
+	color: #FFFFFF;
+	display: block;
+	font-size: 13px;
+	font-weight:bold;
+	height:40px;
+	line-height:40px;
+	position: absolute;
+	right: 10px;
+	text-align: center;
+	top: 10px;
+	width: 40px;
+}
+/**======= 7.4. Grid Product =======**/
+.product-grid {
+	position: relative;
+	text-align:center;
+	vertical-align:top;
+	background:#fff;
+	padding:7px 7px 7px 7px;
+	border:3px solid transparent;
+	margin-bottom:15px;
+}
+.product-grid:hover { border-color:#eae9e9; }
+.product-grid .product-thumb .image { margin-bottom:5px; }
+.product-grid .product-thumb .image { float: none; }
+.product-grid .product-thumb .description, .product-grid .product-thumb .price-tax, .owl-carousel .product-thumb .price-tax { display:none; }
+.product-grid .product-thumb .button-group .add-to-links button, .owl-carousel .product-thumb .button-group .add-to-links button, {
+padding:2px 6px;
+}
+@media only screen and (min-width:1025px) {
+.product-grid .product-thumb .button-group .add-to-links, .owl-carousel .product-thumb .button-group .add-to-links {
+visibility:hidden;
+}
+}
+.product-grid:hover .product-thumb .button-group .add-to-links, .owl-carousel .product-thumb:hover .button-group .add-to-links { visibility:visible; }
+.product-grid .product-thumb .button-group .add-to-links button span { display:none; }
+/**======= 7.5. List Product =======**/
+.product-list {
+	position:relative;
+	padding:20px 0px;
+	border-top:2px solid #eae9e9;
+}
+.product-list:first-child { border-top:none; }
+.product-list .image {
+	float:right;
+	margin-right:15px;
+}
+.product-list .product-thumb h4 { margin-bottom:8px; }
+.product-list .product-thumb h4 a {
+	font-weight: bold;
+	font-size:15px;
+}
+.product-list .product-thumb .description { margin-bottom:0px; }
+.product-list .product-thumb .button-group .btn-primary {
+	float:left;
+	margin-right:5px;
+}
+.product-list .product-thumb .button-group .add-to-links {
+	float:left;
+	padding:1px 0px;
+	display:inline-block;
+}
+.product-list .product-thumb .button-group .add-to-links button span { font-size:12px; }
+.product-list .saving {
+	top:25px;
+	left:16px;
+}
+/**======= 7.6. Rating Star =======**/
+.rating .fa-stack { font-size:6px; }
+.rating .fa-star-o {
+	color: #999;
+	font-size: 13px;
+}
+.rating .fa-star {
+	color: #FC0;
+	font-size: 13px;
+}
+.rating .fa-star + .fa-star-o { color: #E69500; }
+/**======= 7.7. Pagination =======**/
+.pagination { margin:0px; }
+.pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus { background: #3e7cb4; color: #fff; }
+.pagination > li:first-child > a, .pagination > li:first-child > span, .pagination > li:last-child > a, .pagination > li:last-child > span { border-radius:0px; }
+.pagination > li > a, .pagination > li > span { color:#3e7cb4; }
+
+/*===================================================================================*/
+/*  13. Static Banner
+/*===================================================================================*/
+.marketshop-banner > div.row div { margin-bottom:25px; }
+.marketshop-banner div img {
+	width:100%;
+	height:auto;
+	display:block;
+	opacity: 1;
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	-ms-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+}
+.marketshop-banner div a img:hover {
+	opacity:0.8;
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	-ms-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+}
+/*===================================================================================*/
+/*  14. Faq Page
+/*===================================================================================*/
+.faq .panel-title {
+	font-size:14px;
+	margin:8px 0;
+	display:inline-block;
+}
+.faq .panel-title:hover {
+	color:#3e7cb4;
+	text-decoration:underline;
+}
+.faq .panel-body { padding:10px; }
+
+
+/**===== Title =====**/
+.title { margin:0px 0px 20px 0px; }
+/**===== Sub Title =====**/
+.subtitle {
+	position:relative;
+	padding:0px;
+	margin:0px 0px 20px 0px;
+	line-height:normal;
+	font-size:20px;
+	color:#000000;
+	border-bottom:2px solid #ddd;
+	padding-bottom:3px;
+}
+.subtitle .viewall { font-size:15px; }
+/**===== Title for 404 Page =====**/
+.title-404 {
+	font-size:300px;
+	font-weight:bold;
+	line-height: 1em;
+}
+
+/*===================================================================================*/
+/*  List Product
+/*===================================================================================*/
+.product-list .image {
+	float:right;
+	margin-left: 20px;
+	margin-right:0px;
+}
+.product-list .product-thumb .button-group .btn-primary, .product-list .product-thumb .button-group .add-to-links { float:right; }
+.product-list .product-thumb .button-group .btn-primary {
+	margin-right:auto;
+	margin-left:5px;
+}
+#list-view, #grid-view {
+	margin-right:auto;
+	margin-left:10px;
+}
+
+/*===================================================================================*/
+/*  5. Feature box
+/*===================================================================================*/
+.custom-feature-box .feature-box {
+	background:#f2f2f2;
+	text-align:center;
+	padding:10px;
+	margin-bottom:20px;
+}
+.custom-feature-box .feature-box .title {
+	color:#555;
+	font-size:13px;
+	text-transform:uppercase;
+	line-height:normal;
+	margin:0;
+}
+.custom-feature-box .feature-box p {
+	color:#888;
+	font-size:12px;
+	margin:0;
+	line-height:normal;
+}
+
+// =======================================================================================
+
+.owl-dots {
+  direction:ltr;
+}
+
+.owl-items {
+  float:right;
+}
+
+.owl-stage-outer {
+  direction: ltr;
+}
+
+// =======================================================================================

@@ -1,0 +1,14 @@
+.image {
+  float:right;
+
+  img{
+    width:100px;
+    border-radius: 5px;
+  }
+}
+
+.form {
+  float:right;
+  width: calc(100% - 120px);
+  margin-right: 20px;
+}

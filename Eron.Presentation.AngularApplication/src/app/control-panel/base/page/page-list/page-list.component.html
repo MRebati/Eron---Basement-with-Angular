@@ -1,0 +1,83 @@
+<app-bread-crump [BreadCrump]="breadCrump"></app-bread-crump>
+
+<div class="wrapper wrapper-content animated fadeInRight">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="ibox">
+        <div class="ibox-title">
+          <h4>همه صفحات</h4>
+        </div>
+        <div class="ibox-content no-padding">
+          <!-- <div class="row">
+
+                    <div class="col-sm-5 pull-left m-b-md">
+                        <div class="input-group"><input type="text" placeholder="جستجو" class="input-sm form-control"> <span class="input-group-btn">
+                            <button type="button" class="btn btn-sm btn-primary"><i class="fa fa-search"></i></button> </span></div>
+                    </div>
+                </div> -->
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+
+                  <!-- <th></th> -->
+                  <th>نام صفحه</th>
+                  <th>کلمات کلیدی</th>
+                  <th>تاریخ انتشار</th>
+                  <th>عملیات</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of pageItems; let index = index">
+                  <!-- <td><input type="checkbox" icheck name="input[]"></td> -->
+                  <td>{{item.title}}
+                    <small class="pull-left">
+                      {{ (item.description.length>100)? (item.description | slice:0:100)+'...':(item.description) }}
+                    </small>
+                  </td>
+                  <td>
+                    <badge *ngFor="let keyword of item.keywords.split(',')" labelStatus="primary">{{keyword}}</badge>
+                  </td>
+                  <td>{{item.createDateTime | jalali}}</td>
+                  <td>
+                    <a class="btn btn-sm btn-outline btn-link" href="{{item.slug}}">
+                      <i class="fa fa-eye"></i>
+                    </a>
+                    <a class="btn btn-sm btn-outline btn-link" [routerLink]="['/controlpanel','pages','update',item.id]">
+                      <i class="fa fa-edit"></i>
+                    </a>
+                    <a class="btn btn-sm btn-outline btn-link" (click)="removeItem(item)">
+                      <i class="fa fa-trash"></i>
+                    </a>
+                  </td>
+                </tr>
+                <!-- <tr>
+                            <td><input type="checkbox" icheck name="input[]"></td>
+                            <td>Alpha project</td>
+                            <td>40%</td>
+                            <td>Jul 16, 2013</td>
+                            <td><a href="table_basic.html#"><i class="fa fa-check text-navy"></i></a></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" icheck name="input[]"></td>
+                            <td>Betha project</td>
+                            <td>75%</td>
+                            <td>Jul 18, 2013</td>
+                            <td><a href="table_basic.html#"><i class="fa fa-check text-navy"></i></a></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" icheck name="input[]"></td>
+                            <td>Gamma project</td>
+                            <td>18%</td>
+                            <td>Jul 22, 2013</td>
+                            <td><a href="table_basic.html#"><i class="fa fa-check text-navy"></i></a></td>
+                        </tr> -->
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

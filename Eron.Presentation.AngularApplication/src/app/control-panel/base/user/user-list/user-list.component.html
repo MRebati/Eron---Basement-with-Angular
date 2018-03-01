@@ -1,0 +1,38 @@
+<app-bread-crump [BreadCrump]="breadCrump"></app-bread-crump>
+
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-md-12">
+          <div class="ibox">
+            <div class="ibox-title">
+              <h4>لیست کابران</h4>
+            </div>
+            <div class="ibox-content no-padding">
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th>نام کاربر</th>
+                            <th>تاریخ ثبت نام</th>
+                            <th>عملیات</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr *ngFor="let item of userItems; let index = index">
+                            <td>{{item.email}}</td>
+                            <td>{{item.createDateTime | jalali}}</td>
+                            <td>
+                                <a class="btn btn-sm btn-outline btn-link" [routerLink]="['/controlpanel','users','details', item.id]"><i class="fa fa-eye"></i></a>
+                                <a class="btn btn-sm btn-outline btn-link" [routerLink]="['/controlpanel','users','update', item.id]"><i class="fa fa-edit"></i></a>
+                                <a class="btn btn-sm btn-outline btn-link" (click)="onDelete(item)"><i class="fa fa-trash"></i></a>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>

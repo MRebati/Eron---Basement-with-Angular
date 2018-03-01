@@ -1,0 +1,42 @@
+<modal #modal title="وارد شوید" [closeOnEscape]="true" [closeOnOutsideClick]="true" [hideCloseButton]="false">
+
+  <modal-content>
+    <div class="row">
+      <div class="col-sm-12">
+
+        <p>برای استفاده از تمامی امکانات وارد شوید </p>
+
+        <form>
+          <div class="form-group">
+            <label for="modalEmail">ایمیل</label>
+            <input id="modalEmail" type="email" placeholder="ایمیل" [(ngModel)]="loginModel.UserName" [ngModelOptions]="{standalone: true}"
+              class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="modalPassword">رمز عبور</label>
+            <input type="password" id="modalPassword" placeholder="رمز عبور" [(ngModel)]="loginModel.Password" [ngModelOptions]="{standalone: true}"
+              class="form-control">
+          </div>
+          <div class="form-group" *ngIf="modalIsOpen">
+            <recaptcha #recaptcha (resolved)="resolved($event)" siteKey="6LcFD0MUAAAAAE22fkBoKY5stmCLhOW30Y1I0F6K"></recaptcha>
+          </div>
+        </form>
+      </div>
+    </div>
+  </modal-content>
+
+  <modal-footer>
+
+    <button [ladda]="submitting" class="btn btn-sm btn-primary pull-right m-t-n-xs" (click)="onLogin()">
+      <strong>وارد شوید</strong>
+    </button>
+    <div class="pull-right mr-sm">
+      <p>اگر اکانت ندارید
+        <a routerLink="/register">از اینجا</a> یکی بسازید</p>
+    </div>
+    <label class="pull-left">
+      <input type="checkbox" icheck> مرا به خاطر بسپار </label>
+
+  </modal-footer>
+
+</modal>

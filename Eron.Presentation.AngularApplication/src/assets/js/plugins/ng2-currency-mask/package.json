@@ -1,0 +1,68 @@
+{
+  "_from": "ng2-currency-mask",
+  "_id": "ng2-currency-mask@4.4.1",
+  "_inBundle": false,
+  "_integrity": "sha1-SqJiJFVk5hG3i0DM54buPwUi7Bk=",
+  "_location": "/ng2-currency-mask",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "ng2-currency-mask",
+    "name": "ng2-currency-mask",
+    "escapedName": "ng2-currency-mask",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/ng2-currency-mask/-/ng2-currency-mask-4.4.1.tgz",
+  "_shasum": "4aa262245564e611b78b40cce786ee3f0522ec19",
+  "_spec": "ng2-currency-mask",
+  "_where": "F:\\Artin\\Eron\\Eron.Presentation.AngularApplication",
+  "author": {
+    "name": "César Mendonça"
+  },
+  "bugs": {
+    "url": "https://github.com/cesarrew/ng2-currency-mask/issues"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "A very simple currency mask directive that allows using a number attribute with the ngModel.",
+  "devDependencies": {
+    "@angular/common": "4.3.2",
+    "@angular/compiler": "4.3.2",
+    "@angular/compiler-cli": "4.3.2",
+    "@angular/core": "4.3.2",
+    "@angular/forms": "4.3.2",
+    "@angular/platform-browser": "4.3.2",
+    "rxjs": "5.0.1",
+    "typescript": "2.3.4",
+    "zone.js": "0.8.5"
+  },
+  "homepage": "https://github.com/cesarrew/ng2-currency-mask",
+  "keywords": [
+    "angular",
+    "angular2",
+    "angular4",
+    "currency",
+    "mask",
+    "model",
+    "money",
+    "ng2",
+    "number"
+  ],
+  "license": "MIT",
+  "name": "ng2-currency-mask",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cesarrew/ng2-currency-mask.git"
+  },
+  "scripts": {
+    "prepublish": "ngc"
+  },
+  "version": "4.4.1"
+}

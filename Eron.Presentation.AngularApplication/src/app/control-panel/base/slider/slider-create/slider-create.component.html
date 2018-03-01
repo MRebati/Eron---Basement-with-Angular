@@ -1,0 +1,68 @@
+<app-bread-crump [BreadCrump]="breadCrump"></app-bread-crump>
+
+<div class="wrapper wrapper-content animated fadeInRight">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="ibox">
+        <div class="ibox-title">
+          <h4>ثبت اسلاید - بنر جدید</h4>
+        </div>
+        <div class="ibox-content">
+          <div class="row">
+            <div class="col-md-12 m-b no-padding">
+              <div class="form-group">
+                <label for="groupName" class="control-label col-md-12">نام گروه</label>
+                <div class="col-md-12">
+                  <input id="groupName" [(ngModel)]="groupName" type="text" class="form-control">
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <dropzone [message]="'برای بارگزاری فایل های خود را اینجا بکشید یا کلیک نمایید'" (error)="onUploadError($event)" (success)="onUploadSuccess($event)"
+                (removedfile)="onRemoveFile($event)"></dropzone>
+            </div>
+            <div class="col-md-6">
+              <div class="panel panel-success" *ngFor="let sliderItem of sliderList; let index = index">
+                <div class="panel-heading">
+                  {{sliderItem.fileName}}
+                </div>
+                <div class="panel-body">
+                  <div class="image">
+                    <img [src]="sliderItem.imageAddress" />
+                  </div>
+                  <div class="form">
+                    <div class="form-group">
+                      <input class="form-control" type="text" name="title" [(ngModel)]="sliderItem.title" placeholder="عنوان" />
+                    </div>
+                    <div class="form-group">
+                      <input class="form-control" type="text" name="link" [(ngModel)]="sliderItem.linkUrl" placeholder="پیوند" />
+                    </div>
+                    <div class="form-group">
+                      <textarea class="form-control" name="description" [(ngModel)]="sliderItem.description" placeholder="توضیحات"></textarea>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="ibox m-t-md">
+        <div class="ibox-content clearfix">
+          <div class="row">
+            <div class="col-md-12 text-left">
+              <a class="btn btn-default btn-md btn-outline" routerLink="/controlpanel/sliders">انصراف</a>
+              <button class="btn btn-primary btn-md btn-outline" [ladda]="submitting" (click)="save()">
+                <i class="fa fa-save"></i> ذخیره
+              </button>
+              <!--
+                <button class="btn btn-primary btn-md btn-outline" form="form">
+                  <i class="fa fa-save"></i> ذخیره و جدید
+                </button> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

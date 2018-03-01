@@ -1,0 +1,37 @@
+.title-action{
+  text-align: left !important;
+  margin-left: 1.5em;
+}
+
+.top-navigation #page-wrapper {
+  margin-right: 0;
+}
+
+table.table{
+  th{
+    text-align: right;
+  }
+}
+
+#toast-container{
+  .toast:before {
+    position: fixed;
+    font-family: FontAwesome;
+    font-size: 24px;
+    line-height: 24px;
+    float: left;
+    color: #FFF;
+    padding-left: 0.5em;
+    margin: auto -1.9em auto 0.5em;
+  }
+}
+
+#toast-container > div {
+  padding: 15px 50px 15px 15px !important;
+}
+
+
+.panel-heading{
+  text-overflow: ellipsis;
+  overflow: hidden;
+}

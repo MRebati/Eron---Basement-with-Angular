@@ -1,0 +1,503 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FCD558C2-5501-4575-91B6-C4BE9F97EE7B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Eron.DataAccess.EntityFramework</RootNamespace>
+    <AssemblyName>Eron.DataAccess.EntityFramework</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Linq.Dynamic, Version=1.0.6132.35681, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Linq.Dynamic.1.0.7\lib\net40\System.Linq.Dynamic.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApplicationDbContext.cs" />
+    <Compile Include="Infrastructure\ContextConfiguration.cs" />
+    <Compile Include="Infrastructure\ReadOnlyRepository.cs" />
+    <Compile Include="Infrastructure\Repository.cs" />
+    <Compile Include="Infrastructure\TptReadOnlyRepository.cs" />
+    <Compile Include="Infrastructure\UnitOfWork.cs" />
+    <Compile Include="Migrations\201711140914193_conf-init-database-1.cs" />
+    <Compile Include="Migrations\201711140914193_conf-init-database-1.Designer.cs">
+      <DependentUpon>201711140914193_conf-init-database-1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711231808337_conf-update-tariff-order.cs" />
+    <Compile Include="Migrations\201711231808337_conf-update-tariff-order.Designer.cs">
+      <DependentUpon>201711231808337_conf-update-tariff-order.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712012312397_conf-file-upload-1.cs" />
+    <Compile Include="Migrations\201712012312397_conf-file-upload-1.Designer.cs">
+      <DependentUpon>201712012312397_conf-file-upload-1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712012356043_conf-file-upload-2.cs" />
+    <Compile Include="Migrations\201712012356043_conf-file-upload-2.Designer.cs">
+      <DependentUpon>201712012356043_conf-file-upload-2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712032229471_conf-file-upload-3.cs" />
+    <Compile Include="Migrations\201712032229471_conf-file-upload-3.Designer.cs">
+      <DependentUpon>201712032229471_conf-file-upload-3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712041629554_conf-product-property-1.cs" />
+    <Compile Include="Migrations\201712041629554_conf-product-property-1.Designer.cs">
+      <DependentUpon>201712041629554_conf-product-property-1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712072019004_conf-update-page.cs" />
+    <Compile Include="Migrations\201712072019004_conf-update-page.Designer.cs">
+      <DependentUpon>201712072019004_conf-update-page.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712091032064_conf-link-hierarichal-1.cs" />
+    <Compile Include="Migrations\201712091032064_conf-link-hierarichal-1.Designer.cs">
+      <DependentUpon>201712091032064_conf-link-hierarichal-1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712092125515_conf-link-priority-1.cs" />
+    <Compile Include="Migrations\201712092125515_conf-link-priority-1.Designer.cs">
+      <DependentUpon>201712092125515_conf-link-priority-1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712101927565_conf-product-images-1.cs" />
+    <Compile Include="Migrations\201712101927565_conf-product-images-1.Designer.cs">
+      <DependentUpon>201712101927565_conf-product-images-1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712102228168_conf-product-propertynames-1.cs" />
+    <Compile Include="Migrations\201712102228168_conf-product-propertynames-1.Designer.cs">
+      <DependentUpon>201712102228168_conf-product-propertynames-1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712131844155_conf-add-bannerslider.cs" />
+    <Compile Include="Migrations\201712131844155_conf-add-bannerslider.Designer.cs">
+      <DependentUpon>201712131844155_conf-add-bannerslider.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712152121006_conf-update-slider-1.cs" />
+    <Compile Include="Migrations\201712152121006_conf-update-slider-1.Designer.cs">
+      <DependentUpon>201712152121006_conf-update-slider-1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712172215408_conf-update-product-defaultImage-1.cs" />
+    <Compile Include="Migrations\201712172215408_conf-update-product-defaultImage-1.Designer.cs">
+      <DependentUpon>201712172215408_conf-update-product-defaultImage-1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712230546536_conf-update-product-update-20171223.cs" />
+    <Compile Include="Migrations\201712230546536_conf-update-product-update-20171223.Designer.cs">
+      <DependentUpon>201712230546536_conf-update-product-update-20171223.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712240047197_conf-add-cart-wishList-20171224.cs" />
+    <Compile Include="Migrations\201712240047197_conf-add-cart-wishList-20171224.Designer.cs">
+      <DependentUpon>201712240047197_conf-add-cart-wishList-20171224.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712270047510_conf-update-productCategory-20171227.cs" />
+    <Compile Include="Migrations\201712270047510_conf-update-productCategory-20171227.Designer.cs">
+      <DependentUpon>201712270047510_conf-update-productCategory-20171227.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712312233160_conf-add-tariff-category-1.cs" />
+    <Compile Include="Migrations\201712312233160_conf-add-tariff-category-1.Designer.cs">
+      <DependentUpon>201712312233160_conf-add-tariff-category-1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801031103490_conf-update-tariff-category-1.cs" />
+    <Compile Include="Migrations\201801031103490_conf-update-tariff-category-1.Designer.cs">
+      <DependentUpon>201801031103490_conf-update-tariff-category-1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801032155208_conf-update-tariff-category-2018-01-04.cs" />
+    <Compile Include="Migrations\201801032155208_conf-update-tariff-category-2018-01-04.Designer.cs">
+      <DependentUpon>201801032155208_conf-update-tariff-category-2018-01-04.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801041252109_conf-update-tariff-category-2018-01-04-2.cs" />
+    <Compile Include="Migrations\201801041252109_conf-update-tariff-category-2018-01-04-2.Designer.cs">
+      <DependentUpon>201801041252109_conf-update-tariff-category-2018-01-04-2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801150830599_conf-update-order-2018-01-15-1.cs" />
+    <Compile Include="Migrations\201801150830599_conf-update-order-2018-01-15-1.Designer.cs">
+      <DependentUpon>201801150830599_conf-update-order-2018-01-15-1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801150835231_conf-update-cart-2018-01-15-1.cs" />
+    <Compile Include="Migrations\201801150835231_conf-update-cart-2018-01-15-1.Designer.cs">
+      <DependentUpon>201801150835231_conf-update-cart-2018-01-15-1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801150837192_conf-update-order-2018-01-15-2.cs" />
+    <Compile Include="Migrations\201801150837192_conf-update-order-2018-01-15-2.Designer.cs">
+      <DependentUpon>201801150837192_conf-update-order-2018-01-15-2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801150846302_conf-update-invoice-item-2018-01-15-1.cs" />
+    <Compile Include="Migrations\201801150846302_conf-update-invoice-item-2018-01-15-1.Designer.cs">
+      <DependentUpon>201801150846302_conf-update-invoice-item-2018-01-15-1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801150925218_conf-update-eronfile-2018-01-15-1.cs" />
+    <Compile Include="Migrations\201801150925218_conf-update-eronfile-2018-01-15-1.Designer.cs">
+      <DependentUpon>201801150925218_conf-update-eronfile-2018-01-15-1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801151610549_conf-update-order-2018-01-15-3.cs" />
+    <Compile Include="Migrations\201801151610549_conf-update-order-2018-01-15-3.Designer.cs">
+      <DependentUpon>201801151610549_conf-update-order-2018-01-15-3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801161156273_conf-update-order-2018-01-16-1.cs" />
+    <Compile Include="Migrations\201801161156273_conf-update-order-2018-01-16-1.Designer.cs">
+      <DependentUpon>201801161156273_conf-update-order-2018-01-16-1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801170824347_conf-update-order-2018-01-17-1.cs" />
+    <Compile Include="Migrations\201801170824347_conf-update-order-2018-01-17-1.Designer.cs">
+      <DependentUpon>201801170824347_conf-update-order-2018-01-17-1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801172017535_conf-financial-transaction-and-order-log-2018-01-17-1.cs" />
+    <Compile Include="Migrations\201801172017535_conf-financial-transaction-and-order-log-2018-01-17-1.Designer.cs">
+      <DependentUpon>201801172017535_conf-financial-transaction-and-order-log-2018-01-17-1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801172116246_conf-invoice-item-2018-01-17.cs" />
+    <Compile Include="Migrations\201801172116246_conf-invoice-item-2018-01-17.Designer.cs">
+      <DependentUpon>201801172116246_conf-invoice-item-2018-01-17.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801172134582_conf-cart-item-2018-01-17-1.cs" />
+    <Compile Include="Migrations\201801172134582_conf-cart-item-2018-01-17-1.Designer.cs">
+      <DependentUpon>201801172134582_conf-cart-item-2018-01-17-1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801190923394_conf-invoice-userid-2018-01-17-1.cs" />
+    <Compile Include="Migrations\201801190923394_conf-invoice-userid-2018-01-17-1.Designer.cs">
+      <DependentUpon>201801190923394_conf-invoice-userid-2018-01-17-1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801191602521_conf-transaction-update-2018-01-19-1.cs" />
+    <Compile Include="Migrations\201801191602521_conf-transaction-update-2018-01-19-1.Designer.cs">
+      <DependentUpon>201801191602521_conf-transaction-update-2018-01-19-1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801191939598_conf-application-user-update-2018-01-19-1.cs" />
+    <Compile Include="Migrations\201801191939598_conf-application-user-update-2018-01-19-1.Designer.cs">
+      <DependentUpon>201801191939598_conf-application-user-update-2018-01-19-1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801191952198_conf-application-user-update-2018-01-19-2.cs" />
+    <Compile Include="Migrations\201801191952198_conf-application-user-update-2018-01-19-2.Designer.cs">
+      <DependentUpon>201801191952198_conf-application-user-update-2018-01-19-2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801200146447_conf-cart-item-update-2018-01-19-2.cs" />
+    <Compile Include="Migrations\201801200146447_conf-cart-item-update-2018-01-19-2.Designer.cs">
+      <DependentUpon>201801200146447_conf-cart-item-update-2018-01-19-2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801200355488_conf-invoice-update-2018-01-20-1.cs" />
+    <Compile Include="Migrations\201801200355488_conf-invoice-update-2018-01-20-1.Designer.cs">
+      <DependentUpon>201801200355488_conf-invoice-update-2018-01-20-1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801211833469_conf-order-update-2018-01-21-1.cs" />
+    <Compile Include="Migrations\201801211833469_conf-order-update-2018-01-21-1.Designer.cs">
+      <DependentUpon>201801211833469_conf-order-update-2018-01-21-1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801231512298_conf-invoice-update-2018-01-23-1.cs" />
+    <Compile Include="Migrations\201801231512298_conf-invoice-update-2018-01-23-1.Designer.cs">
+      <DependentUpon>201801231512298_conf-invoice-update-2018-01-23-1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801231659552_conf-product-update-2018-01-23-1.cs" />
+    <Compile Include="Migrations\201801231659552_conf-product-update-2018-01-23-1.Designer.cs">
+      <DependentUpon>201801231659552_conf-product-update-2018-01-23-1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801241545022_conf-invoice-update-2018-01-24-1.cs" />
+    <Compile Include="Migrations\201801241545022_conf-invoice-update-2018-01-24-1.Designer.cs">
+      <DependentUpon>201801241545022_conf-invoice-update-2018-01-24-1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801241905235_conf-finance-transaction-update-2018-01-24-1.cs" />
+    <Compile Include="Migrations\201801241905235_conf-finance-transaction-update-2018-01-24-1.Designer.cs">
+      <DependentUpon>201801241905235_conf-finance-transaction-update-2018-01-24-1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801241943444_conf-invoice-update-2018-01-24-2.cs" />
+    <Compile Include="Migrations\201801241943444_conf-invoice-update-2018-01-24-2.Designer.cs">
+      <DependentUpon>201801241943444_conf-invoice-update-2018-01-24-2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801261349073_conf-invoice-log-add-2018-01-26-1.cs" />
+    <Compile Include="Migrations\201801261349073_conf-invoice-log-add-2018-01-26-1.Designer.cs">
+      <DependentUpon>201801261349073_conf-invoice-log-add-2018-01-26-1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801261353557_conf-review-add-2018-01-26-1.cs" />
+    <Compile Include="Migrations\201801261353557_conf-review-add-2018-01-26-1.Designer.cs">
+      <DependentUpon>201801261353557_conf-review-add-2018-01-26-1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801261400128_conf-review-update-2018-01-26-1.cs" />
+    <Compile Include="Migrations\201801261400128_conf-review-update-2018-01-26-1.Designer.cs">
+      <DependentUpon>201801261400128_conf-review-update-2018-01-26-1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801261516126_conf-review-update-2018-01-26-2.cs" />
+    <Compile Include="Migrations\201801261516126_conf-review-update-2018-01-26-2.Designer.cs">
+      <DependentUpon>201801261516126_conf-review-update-2018-01-26-2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802021405460_conf-invoice-update-2018-02-02-1.cs" />
+    <Compile Include="Migrations\201802021405460_conf-invoice-update-2018-02-02-1.Designer.cs">
+      <DependentUpon>201802021405460_conf-invoice-update-2018-02-02-1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802030836127_conf-user-message-update-2018-02-03-1.cs" />
+    <Compile Include="Migrations\201802030836127_conf-user-message-update-2018-02-03-1.Designer.cs">
+      <DependentUpon>201802030836127_conf-user-message-update-2018-02-03-1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802031118248_conf-entity-logical-delete-update-2018-02-03-1.cs" />
+    <Compile Include="Migrations\201802031118248_conf-entity-logical-delete-update-2018-02-03-1.Designer.cs">
+      <DependentUpon>201802031118248_conf-entity-logical-delete-update-2018-02-03-1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802041342125_conf-order-user-update-2018-02-04-1.cs" />
+    <Compile Include="Migrations\201802041342125_conf-order-user-update-2018-02-04-1.Designer.cs">
+      <DependentUpon>201802041342125_conf-order-user-update-2018-02-04-1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802150900469_conf-tariff-update-2018-02-15-1.cs" />
+    <Compile Include="Migrations\201802150900469_conf-tariff-update-2018-02-15-1.Designer.cs">
+      <DependentUpon>201802150900469_conf-tariff-update-2018-02-15-1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802161442046_conf-tariff-update-2018-02-16-1.cs" />
+    <Compile Include="Migrations\201802161442046_conf-tariff-update-2018-02-16-1.Designer.cs">
+      <DependentUpon>201802161442046_conf-tariff-update-2018-02-16-1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802161909530_conf-product-category-update-2018-02-16-1.cs" />
+    <Compile Include="Migrations\201802161909530_conf-product-category-update-2018-02-16-1.Designer.cs">
+      <DependentUpon>201802161909530_conf-product-category-update-2018-02-16-1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\Base\BannerSliderRepository.cs" />
+    <Compile Include="Repositories\Base\EronFileRepository.cs" />
+    <Compile Include="Repositories\Base\LinkRepository.cs" />
+    <Compile Include="Repositories\Base\PageRepository.cs" />
+    <Compile Include="Repositories\Base\TenantRepository.cs" />
+    <Compile Include="Repositories\Base\UserMessageRepository.cs" />
+    <Compile Include="Repositories\Financial\Base\CartRepository.cs" />
+    <Compile Include="Repositories\Financial\Base\OfferRepository.cs" />
+    <Compile Include="Repositories\Financial\Base\ServiceReviewRepository.cs" />
+    <Compile Include="Repositories\Financial\Base\WishListRepository.cs" />
+    <Compile Include="Repositories\Financial\Order\OrderRepository.cs" />
+    <Compile Include="Repositories\Financial\Order\TariffCategoryRepository.cs" />
+    <Compile Include="Repositories\Financial\Order\TariffPriceRepository.cs" />
+    <Compile Include="Repositories\Financial\Order\TariffRepository.cs" />
+    <Compile Include="Repositories\Financial\Order\TariffItemRepository.cs" />
+    <Compile Include="Repositories\Financial\Shop\FinanceTransactionRepository.cs" />
+    <Compile Include="Repositories\Financial\Shop\InovoiceLogRepository.cs" />
+    <Compile Include="Repositories\Financial\Shop\InvoiceItemRepository.cs" />
+    <Compile Include="Repositories\Financial\Shop\InvoiceRepository.cs" />
+    <Compile Include="Repositories\Financial\Shop\ProductCategoryRepository.cs" />
+    <Compile Include="Repositories\Financial\Shop\ProductPriceRepository.cs" />
+    <Compile Include="Repositories\Financial\Shop\ProductPropertyNameRepository.cs" />
+    <Compile Include="Repositories\Financial\Shop\ProductPropertyRepository.cs" />
+    <Compile Include="Repositories\Financial\Shop\ProductRepository.cs" />
+    <Compile Include="Repositories\TenantRepository.cs" />
+    <Compile Include="UnitOfWorks\DefaultUnitOfWork.cs" />
+    <Compile Include="UnitOfWorks\ManagementUnitOfWork.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Eron.Core\Eron.Core.csproj">
+      <Project>{7AC8303B-8D88-407B-BBC1-5E36312A8AF1}</Project>
+      <Name>Eron.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Eron.DataAccess.Contract\Eron.DataAccess.Contract.csproj">
+      <Project>{406BD3A9-1557-47D9-88FE-58113A7A3DA8}</Project>
+      <Name>Eron.DataAccess.Contract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Eron.SharedKernel\Eron.SharedKernel.csproj">
+      <Project>{6604261A-6A01-4832-91BA-E208B08A9D8F}</Project>
+      <Name>Eron.SharedKernel</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201711140914193_conf-init-database-1.resx">
+      <DependentUpon>201711140914193_conf-init-database-1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711231808337_conf-update-tariff-order.resx">
+      <DependentUpon>201711231808337_conf-update-tariff-order.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712012312397_conf-file-upload-1.resx">
+      <DependentUpon>201712012312397_conf-file-upload-1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712012356043_conf-file-upload-2.resx">
+      <DependentUpon>201712012356043_conf-file-upload-2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712032229471_conf-file-upload-3.resx">
+      <DependentUpon>201712032229471_conf-file-upload-3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712041629554_conf-product-property-1.resx">
+      <DependentUpon>201712041629554_conf-product-property-1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712072019004_conf-update-page.resx">
+      <DependentUpon>201712072019004_conf-update-page.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712091032064_conf-link-hierarichal-1.resx">
+      <DependentUpon>201712091032064_conf-link-hierarichal-1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712092125515_conf-link-priority-1.resx">
+      <DependentUpon>201712092125515_conf-link-priority-1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712101927565_conf-product-images-1.resx">
+      <DependentUpon>201712101927565_conf-product-images-1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712102228168_conf-product-propertynames-1.resx">
+      <DependentUpon>201712102228168_conf-product-propertynames-1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712131844155_conf-add-bannerslider.resx">
+      <DependentUpon>201712131844155_conf-add-bannerslider.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712152121006_conf-update-slider-1.resx">
+      <DependentUpon>201712152121006_conf-update-slider-1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712172215408_conf-update-product-defaultImage-1.resx">
+      <DependentUpon>201712172215408_conf-update-product-defaultImage-1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712230546536_conf-update-product-update-20171223.resx">
+      <DependentUpon>201712230546536_conf-update-product-update-20171223.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712240047197_conf-add-cart-wishList-20171224.resx">
+      <DependentUpon>201712240047197_conf-add-cart-wishList-20171224.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712270047510_conf-update-productCategory-20171227.resx">
+      <DependentUpon>201712270047510_conf-update-productCategory-20171227.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712312233160_conf-add-tariff-category-1.resx">
+      <DependentUpon>201712312233160_conf-add-tariff-category-1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801031103490_conf-update-tariff-category-1.resx">
+      <DependentUpon>201801031103490_conf-update-tariff-category-1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801032155208_conf-update-tariff-category-2018-01-04.resx">
+      <DependentUpon>201801032155208_conf-update-tariff-category-2018-01-04.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801041252109_conf-update-tariff-category-2018-01-04-2.resx">
+      <DependentUpon>201801041252109_conf-update-tariff-category-2018-01-04-2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801150830599_conf-update-order-2018-01-15-1.resx">
+      <DependentUpon>201801150830599_conf-update-order-2018-01-15-1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801150835231_conf-update-cart-2018-01-15-1.resx">
+      <DependentUpon>201801150835231_conf-update-cart-2018-01-15-1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801150837192_conf-update-order-2018-01-15-2.resx">
+      <DependentUpon>201801150837192_conf-update-order-2018-01-15-2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801150846302_conf-update-invoice-item-2018-01-15-1.resx">
+      <DependentUpon>201801150846302_conf-update-invoice-item-2018-01-15-1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801150925218_conf-update-eronfile-2018-01-15-1.resx">
+      <DependentUpon>201801150925218_conf-update-eronfile-2018-01-15-1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801151610549_conf-update-order-2018-01-15-3.resx">
+      <DependentUpon>201801151610549_conf-update-order-2018-01-15-3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801161156273_conf-update-order-2018-01-16-1.resx">
+      <DependentUpon>201801161156273_conf-update-order-2018-01-16-1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801170824347_conf-update-order-2018-01-17-1.resx">
+      <DependentUpon>201801170824347_conf-update-order-2018-01-17-1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801172017535_conf-financial-transaction-and-order-log-2018-01-17-1.resx">
+      <DependentUpon>201801172017535_conf-financial-transaction-and-order-log-2018-01-17-1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801172116246_conf-invoice-item-2018-01-17.resx">
+      <DependentUpon>201801172116246_conf-invoice-item-2018-01-17.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801172134582_conf-cart-item-2018-01-17-1.resx">
+      <DependentUpon>201801172134582_conf-cart-item-2018-01-17-1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801190923394_conf-invoice-userid-2018-01-17-1.resx">
+      <DependentUpon>201801190923394_conf-invoice-userid-2018-01-17-1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801191602521_conf-transaction-update-2018-01-19-1.resx">
+      <DependentUpon>201801191602521_conf-transaction-update-2018-01-19-1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801191939598_conf-application-user-update-2018-01-19-1.resx">
+      <DependentUpon>201801191939598_conf-application-user-update-2018-01-19-1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801191952198_conf-application-user-update-2018-01-19-2.resx">
+      <DependentUpon>201801191952198_conf-application-user-update-2018-01-19-2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801200146447_conf-cart-item-update-2018-01-19-2.resx">
+      <DependentUpon>201801200146447_conf-cart-item-update-2018-01-19-2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801200355488_conf-invoice-update-2018-01-20-1.resx">
+      <DependentUpon>201801200355488_conf-invoice-update-2018-01-20-1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801211833469_conf-order-update-2018-01-21-1.resx">
+      <DependentUpon>201801211833469_conf-order-update-2018-01-21-1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801231512298_conf-invoice-update-2018-01-23-1.resx">
+      <DependentUpon>201801231512298_conf-invoice-update-2018-01-23-1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801231659552_conf-product-update-2018-01-23-1.resx">
+      <DependentUpon>201801231659552_conf-product-update-2018-01-23-1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801241545022_conf-invoice-update-2018-01-24-1.resx">
+      <DependentUpon>201801241545022_conf-invoice-update-2018-01-24-1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801241905235_conf-finance-transaction-update-2018-01-24-1.resx">
+      <DependentUpon>201801241905235_conf-finance-transaction-update-2018-01-24-1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801241943444_conf-invoice-update-2018-01-24-2.resx">
+      <DependentUpon>201801241943444_conf-invoice-update-2018-01-24-2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801261349073_conf-invoice-log-add-2018-01-26-1.resx">
+      <DependentUpon>201801261349073_conf-invoice-log-add-2018-01-26-1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801261353557_conf-review-add-2018-01-26-1.resx">
+      <DependentUpon>201801261353557_conf-review-add-2018-01-26-1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801261400128_conf-review-update-2018-01-26-1.resx">
+      <DependentUpon>201801261400128_conf-review-update-2018-01-26-1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801261516126_conf-review-update-2018-01-26-2.resx">
+      <DependentUpon>201801261516126_conf-review-update-2018-01-26-2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802021405460_conf-invoice-update-2018-02-02-1.resx">
+      <DependentUpon>201802021405460_conf-invoice-update-2018-02-02-1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802030836127_conf-user-message-update-2018-02-03-1.resx">
+      <DependentUpon>201802030836127_conf-user-message-update-2018-02-03-1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802031118248_conf-entity-logical-delete-update-2018-02-03-1.resx">
+      <DependentUpon>201802031118248_conf-entity-logical-delete-update-2018-02-03-1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802041342125_conf-order-user-update-2018-02-04-1.resx">
+      <DependentUpon>201802041342125_conf-order-user-update-2018-02-04-1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802150900469_conf-tariff-update-2018-02-15-1.resx">
+      <DependentUpon>201802150900469_conf-tariff-update-2018-02-15-1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802161442046_conf-tariff-update-2018-02-16-1.resx">
+      <DependentUpon>201802161442046_conf-tariff-update-2018-02-16-1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802161909530_conf-product-category-update-2018-02-16-1.resx">
+      <DependentUpon>201802161909530_conf-product-category-update-2018-02-16-1.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

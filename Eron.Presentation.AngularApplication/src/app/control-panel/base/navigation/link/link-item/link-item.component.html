@@ -1,0 +1,13 @@
+<button class="btn btn-xs btn-danger" data-action="custom" (click)="deleteShow()">
+  <i class="fa fa-trash"></i>
+</button>
+<button class="btn btn-xs btn-warning" data-action="custom" (click)="editShow()">
+  <i class="fa fa-edit"></i>
+</button>
+
+<div class="dd-handle">
+  {{item.linkText}}
+</div>
+<ol class="dd-list" *ngIf="children != null">
+  <li class="dd-item" *ngFor="let child of children" [attr.data-id]="child.id" [item]="child" [itemList]="footerItems" app-link-item></li>
+</ol>

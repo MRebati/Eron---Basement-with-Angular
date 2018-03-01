@@ -1,0 +1,200 @@
+<div class="wrapper wrapper-content animated fadeIn">
+
+  <div class="m-t-sm">
+    <div class="row">
+
+      <div class="col-sm-4">
+        <h1 class="m-b-xs">
+          {{currentMonthSales | priceToman}}
+        </h1>
+        <small>
+          فروش ماه جاری
+        </small>
+        <div id="sparkline1" class="m-b-sm"></div>
+        <!-- <div class="row">
+          <div class="col-xs-4">
+            <small class="stats-label">تعداد نمایش محصولات</small>
+            <h4>236 321.80</h4>
+          </div>
+          <div class="col-xs-4">
+            <small class="stats-label">% نرخ بازدید</small>
+            <h4>46.11%</h4>
+          </div>
+          <div class="col-xs-4">
+            <small class="stats-label">هفته گذشته</small>
+            <h4>432.021</h4>
+          </div>
+        </div> -->
+      </div>
+      <div class="col-sm-4">
+        <h1 class="m-b-xs">
+          {{currentDaySales | priceToman}}
+        </h1>
+        <small>
+          فروش 24 ساعت گذشته
+        </small>
+        <div id="sparkline2" class="m-b-sm"></div>
+        <!-- <div class="row">
+          <div class="col-xs-4">
+            <small class="stats-label">صفحات / بازدید</small>
+            <h4>166 781.80</h4>
+          </div>
+
+          <div class="col-xs-4">
+            <small class="stats-label">% بازدید های جدید</small>
+            <h4>22.45%</h4>
+          </div>
+          <div class="col-xs-4">
+            <small class="stats-label">هفته گذشته</small>
+            <h4>862.044</h4>
+          </div>
+        </div> -->
+      </div>
+      <div class="col-sm-4">
+
+        <div class="row m-t-xs">
+          <div class="col-xs-6">
+            <h5 class="m-b-xs">ورودی ماه گذشته</h5>
+            <h1 class="no-margins">{{lastMonthSales  | priceToman:true}}</h1>
+            <div class="font-bold text-navy">98%
+              <i class="fa fa-bolt"></i>
+            </div>
+          </div>
+          <div class="col-xs-6">
+            <h5 class="m-b-xs">ورودی ماه جاری</h5>
+            <h1 class="no-margins">{{currentMonthSales | priceToman:true}}</h1>
+            <div class="font-bold text-navy">98%
+              <i class="fa fa-bolt"></i>
+            </div>
+          </div>
+        </div>
+
+
+        <table class="table small m-t-sm">
+          <tbody>
+            <tr>
+              <td>
+                <strong>{{orderCount}}</strong> سفارشات
+
+              </td>
+              <td>
+                <strong>{{productsCount}}</strong> محصولات
+              </td>
+
+            </tr>
+            <tr>
+              <td>
+                <strong>{{pagesCount}}</strong> صفحات
+              </td>
+              <td>
+                <strong>{{tariffCounts}}</strong> تعداد تعرفه
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <strong>{{clients}}</strong> کل کاربران
+              </td>
+              <td>
+                <strong>{{customers}}</strong> مشتری ها
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+
+
+      </div>
+
+    </div>
+
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="small pull-right col-md-3 m-l-lg m-t-md">
+          <strong>نمودار فروش [سبز رنگ]</strong> تعداد فروش های 30 روز گذشته را نمایش می دهد
+        </div>
+        <div class="small pull-left col-md-3 m-t-md text-right">
+          <strong>نمودار آبی رنگ</strong> تعداد فروش را در زمان برابر ماه گذشته نشان می دهد
+        </div>
+        <div class="flot-chart m-b-xl">
+          <div class="flot-chart-content" id="flot-dashboard-chart"></div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="ibox">
+
+          <div class="ibox-content">
+
+            <div class="row">
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label class="control-label" for="invoiceNumber">شناسه فاکتور</label>
+                  <input type="text" id="invoiceNumber" name="invoiceNumber" value="" placeholder="شناسه فاکتور" class="form-control" [(ngModel)]="filter.invoiceNumber" (ngModelChange)="onFilterChange()">
+                </div>
+              </div>
+              <!-- <div class="col-sm-2">
+                <div class="form-group">
+                  <label class="control-label" for="clientName">نام مشتری</label>
+                  <input type="text" id="clientName" name="clientName" value="" placeholder="نام مشتری" class="form-control" [(ngModel)]="filter.user">
+                </div>
+              </div> -->
+              <!-- <div class="col-sm-2">
+                <div  class="form-group">
+                  <label class="control-label" for="quantity">Company</label>
+                  <input type="text" id="quantity" name="quantity" value="" placeholder="Company" class="form-control">
+                </div>
+              </div> -->
+              <div class="col-md-4 pull-left">
+                <div class="form-group">
+                  <label class="control-label" for="status">وضعیت</label>
+                  <select name="status" id="status" class="form-control minimal" [(ngModel)]="filter.type" (ngModelChange)="onFilterChange()">
+                    <option value="">همه</option>
+                    <option *ngFor="let invoiceStatus of invoiceStatusList" [value]="invoiceStatus.value">{{invoiceStatus.title}}</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="table-responsive">
+              <table class="table table-striped">
+                <tbody>
+                  <tr *ngFor="let invoice of invoiceList.result| paginate: { itemsPerPage: filter.pageSize, currentPage: filter.pageNumber, totalItems: invoiceList.totalCount }; let index = index">
+                    <td>{{invoice.totalCount}}</td>
+                    <td class="enNumber uppercase">{{invoice.invoiceNumber}}</td>
+                    <td>{{invoice.user.firstName + ' ' + invoice.user.lastName}}</td>
+                    <td>
+                      <badge labelStatus="primary">{{invoice.type | invoicetype }}</badge>
+                    </td>
+                    <td>{{invoice.amount | priceToman}}</td>
+                    <td>
+                      <strong>{{invoice.progressString}}%</strong>
+                    </td>
+                    <td>{{invoice.createDateTime | jalali}}</td>
+                    <td>
+                      <a routerLink="/">
+                        <i class="fa fa-check text-navy"></i>
+                      </a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                  <pagination-controls class="" (pageChange)="onPageChange($event)" previousLabel="قبلی" nextLabel="بعدی" screenReaderPaginationLabel="Pagination"
+                    screenReaderPageLabel="صفحه" screenReaderCurrentLabel="صفحه فعلی شما" directionLinks="true">
+                  </pagination-controls>
+                </div>
+              </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

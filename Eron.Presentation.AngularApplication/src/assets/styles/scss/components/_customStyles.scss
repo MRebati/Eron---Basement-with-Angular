@@ -1,0 +1,149 @@
+.overlay {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  &.loading-page {
+    .loading-content {
+      margin-top: 45vh;
+      position: relative;
+      .loading-text {
+        margin-top: 10px;
+      }
+    }
+  }
+}
+
+.tabs-container .nav-tabs {
+  margin-right: -2px;
+  li {
+    float: right;
+  }
+}
+
+dropzone {
+  overflow: visible;
+  &.dz-wrapper {
+    .dropzone {
+      min-height: auto !important;
+      overflow: visible !important;
+      background: #eee !important;
+      border: 1px solid #ddd !important;
+      .dz-message {
+        overflow: visible;
+        border: none !important;
+        .dz-text {
+          margin-top: 3.2em !important;
+        }
+      }
+      .dz-preview.dz-image-preview {
+        background: none;
+        .dz-image {
+          border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+      }
+    }
+  }
+}
+
+.form-group {
+  div {
+    .note-editor {
+      height: auto !important;
+      min-height: 300px;
+      border: 1px solid #e5e6e7;
+      .dropdown-menu {
+        min-width: 90px;
+        direction: ltr;
+        left: 0;
+        right: auto;
+      }
+      .note-editable {
+        min-height: 250px;
+      }
+    }
+  }
+}
+
+.modal-header .close {
+  float: left;
+}
+
+modal-header {
+  h1 {
+    font-size: 1.5em;
+  }
+}
+
+.modal-footer {
+  text-align: left !important;
+  direction: ltr !important;
+}
+
+ngTree {
+  direction: ltr;
+}
+
+.badge {
+  font-family: 'iranyekan(fanum)', roboto;
+}
+
+.pull-left {
+  float: left !important;
+  &.flip {
+    float: left !important;
+  }
+}
+
+.pull-right {
+  float: right !important;
+  &.flip {
+    float: right !important;
+  }
+}
+
+.profile-element {
+  span {
+    img.img-circle {
+      width: 48px;
+      height: 48px;
+    }
+  }
+}
+
+.enNumber {
+  font-family: 'iranyekan', roboto, Segoe UI, Tahoma, Geneva, Verdana, sans-serif !important;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+select>option {
+  font-family: iranyekan(fanum);
+  min-height: 1.4em;
+  font-weight: 100;
+}
+
+.dir-left {
+  direction: ltr !important;
+}
+
+.text-left {
+  text-align: left !important;
+}
+
+.text-right {
+  text-align: right !important;
+}
+
+.rc-anchor-checkbox-label {
+  font-family: 'iranyekan(fanum)' !important;
+}
+
+fieldset {
+  legend {
+    font-size: 1.4em;
+    color: #676a6c;
+  }
+}

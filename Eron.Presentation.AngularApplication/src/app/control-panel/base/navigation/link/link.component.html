@@ -1,0 +1,118 @@
+<app-bread-crump [BreadCrump]="breadCrump"></app-bread-crump>
+
+<div class="wrapper wrapper-content animated fadeInRight">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="ibox">
+        <div class="ibox-title">
+          <h4>منو ها</h4>
+        </div>
+        <div class="ibox-content">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="panel panel-success">
+                <div class="panel-heading">
+                  لیست پیوند های منو
+                </div>
+                <div class="panel-body">
+                  <div class="dd" nestable (change)="onMenuListChanges($event)" id="nestable">
+                    <ol class="dd-list">
+                        <li class="dd-item" *ngFor="let item of parentMenuItems" [attr.data-id]="item.id" [item]="item" [itemList]="menuItems" app-link-item></li>
+                    </ol>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="panel panel-primary" *ngIf="!viewingMenuLink && !updatingMenuLink">
+                <div class="panel-heading">
+                  افزودن پیوند جدید به منو
+                </div>
+                <div class="panel-body">
+                    <app-menu-create></app-menu-create>
+                </div>
+              </div>
+
+              <div class="panel panel-warning" *ngIf="!viewingMenuLink && updatingMenuLink">
+                <div class="panel-heading">
+                  ویرایش لینک منو
+                  <a class="close-link pull-left">
+                      <i class="fa fa-times"></i>
+                  </a>
+                </div>
+                <div class="panel-body">
+                </div>
+              </div>
+
+              <div class="panel panel-default" *ngIf="viewingMenuLink && !updatingMenuLink">
+                <div class="panel-heading">
+                  جزئیات لینک منو
+                </div>
+                <div class="panel-body">
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-12">
+      <div class="ibox">
+        <div class="ibox-title">
+          <h4>فوتر ها</h4>
+        </div>
+        <div class="ibox-content">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="panel panel-success">
+                <div class="panel-heading">
+                  لیست پیوند های فوتر
+                </div>
+                <div class="panel-body">
+                  <div class="dd" nestable (change)="onFooterListChanges($event)" id="nestable">
+                    <ol class="dd-list">
+                        <li class="dd-item" *ngFor="let item of parentFooterItems" [attr.data-id]="item.id" [item]="item" [itemList]="footerItems" app-link-item></li>
+                    </ol>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="panel panel-primary" *ngIf="!viewingFooterLink && !updatingFooterLink">
+                <div class="panel-heading">
+                  افزودن پیوند جدید به فوتر
+                </div>
+                <div class="panel-body">
+                    <app-footer-create></app-footer-create>
+                </div>
+              </div>
+
+              <div class="panel panel-warning" *ngIf="!viewingFooterLink && updatingFooterLink">
+                <div class="panel-heading">
+                  ویرایش لینک فوتر
+                  <a class="close-link pull-left">
+                      <i class="fa fa-times"></i>
+                  </a>
+                </div>
+                <div class="panel-body">
+                </div>
+              </div>
+
+              <div class="panel panel-default" *ngIf="viewingFooterLink && !updatingFooterLink">
+                <div class="panel-heading">
+                  جزئیات لینک فوتر
+                </div>
+                <div class="panel-body">
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

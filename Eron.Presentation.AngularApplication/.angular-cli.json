@@ -1,0 +1,101 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "project": {
+    "name": "eron"
+  },
+  "apps": [
+    {
+      "root": "src",
+      "outDir": "../Eron.Presentation.WebApplication.WebApi/Scripts/app",
+      "assets": [
+        "assets",
+        "favicon.ico"
+      ],
+      "index": "index.html",
+      "main": "main.ts",
+      "polyfills": "polyfills.ts",
+      "test": "test.ts",
+      "tsconfig": "tsconfig.app.json",
+      "testTsconfig": "tsconfig.spec.json",
+      "prefix": "app",
+      "styles": [
+        "assets/styles/css/fontiran.css",
+        "assets/styles/css/bootstrap.min.css",
+        "../node_modules/font-awesome/css/font-awesome.min.css",
+        "../node_modules/metismenu/dist/metismenu.min.css",
+        "../node_modules/sweetalert2/dist/sweetalert2.min.css",
+        "assets/styles/css/website/owl.carousel.css",
+        "assets/styles/css/website/owl.transitions.css",
+        "assets/styles/css/plugins/toastr/toastr.min.css",
+        "assets/styles/css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css",
+        "assets/styles/css/plugins/ladda/ladda-themeless.min.css",
+        "assets/styles/css/plugins/summernote/summernote.css",
+        "assets/styles/css/plugins/iCheck/_all.css",
+        "assets/styles/css/plugins/tagsinput/jquery.tagsinput.css",
+        "assets/styles/css/plugins/sweetalert/sweetalert.css",
+        "assets/styles/scss/website-styles.scss",
+        "styles.scss"
+      ],
+      "scripts": [
+
+        "../node_modules/jquery/dist/jquery.min.js",
+        "../node_modules/bootstrap/dist/js/bootstrap.min.js",
+        "../node_modules/metismenu/dist/metismenu.min.js",
+        "../node_modules/sweetalert2/dist/sweetalert2.all.min.js",
+        "assets/js/plugins/slimscroll/jquery.slimscroll.min.js",
+        "assets/js/plugins/flot/jquery.flot.js",
+        "assets/js/plugins/flot/jquery.flot.tooltip.min.js",
+        "assets/js/plugins/flot/jquery.flot.spline.js",
+        "assets/js/plugins/flot/jquery.flot.resize.js",
+        "assets/js/plugins/flot/jquery.flot.pie.js",
+        "assets/js/plugins/flot/jquery.flot.symbol.js",
+        "assets/js/plugins/flot/jquery.flot.time.js",
+        "assets/js/plugins/pace/pace.min.js",
+        "assets/js/plugins/summernote/summernote.min.js",
+        "assets/js/plugins/sparkline/jquery.sparkline.min.js",
+        "assets/js/plugins/iCheck/icheck.min.js",
+        "assets/js/plugins/tagsinput/jquery.tagsinput.js",
+        "assets/js/plugins/nestable/jquery.nestable.js",
+        "assets/js/plugins/peity/jquery.peity.min.js",
+        "assets/js/inspinia.js",
+
+        "assets/js/website/jquery.easing-1.3.min.js",
+        "assets/js/website/owl.carousel.min.js",
+        "assets/js/website/jquery.dcjqaccordion.min.js"
+      ],
+      "environmentSource": "environments/environment.ts",
+      "environments": {
+        "dev": "environments/environment.ts",
+        "prod": "environments/environment.prod.ts"
+      }
+    }
+  ],
+  "e2e": {
+    "protractor": {
+      "config": "./protractor.conf.js"
+    }
+  },
+  "lint": [
+    {
+      "project": "src/tsconfig.app.json",
+      "exclude": "**/node_modules/**"
+    },
+    {
+      "project": "src/tsconfig.spec.json",
+      "exclude": "**/node_modules/**"
+    },
+    {
+      "project": "e2e/tsconfig.e2e.json",
+      "exclude": "**/node_modules/**"
+    }
+  ],
+  "test": {
+    "karma": {
+      "config": "./karma.conf.js"
+    }
+  },
+  "defaults": {
+    "styleExt": "scss",
+    "component": {}
+  }
+}
