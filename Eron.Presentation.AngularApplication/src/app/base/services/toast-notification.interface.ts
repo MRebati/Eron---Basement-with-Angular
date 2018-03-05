@@ -5,7 +5,7 @@ export interface ToastNotificationInterface {
     title: string;
     body: string;
     timeout: number;
-    position: number;
+    position: string;
     progressBar: boolean;
     closeClick: boolean;
     newTop: boolean;

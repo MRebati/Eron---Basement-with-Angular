@@ -5,7 +5,13 @@
     "paths": {
       "@angular/*": [
         "../node_modules/@angular/*"
-      ]
+      ],
+      "./base": ["./base/*"],
+      "./base/interfaces": ["./base/interfaces/*"],
+      "./authentication": ["./authentication/*"],
+      "./base/services": ["./base/services/*"],
+      "./base/pipes": ["./base/pipes/*"],
+      "./base/directives": ["./base/directives/*"]
     },
     "baseUrl": "./",
     "module": "es2015",

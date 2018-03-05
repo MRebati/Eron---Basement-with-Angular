@@ -6,5 +6,6 @@
 export const environment = {
   production: false,
   apiHost: 'http://localhost:8090/',
-  websiteHost: 'http://localhost:4200/'
+  websiteHost: 'http://localhost:4200/',
+  env: 'dev'
 };

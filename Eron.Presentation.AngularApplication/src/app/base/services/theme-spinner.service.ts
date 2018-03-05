@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class ThemeSpinner {
 
-  public _selector: string = 'preloader';
+  public _selector = 'preloader';
   public _element: HTMLElement;
 
   constructor() {

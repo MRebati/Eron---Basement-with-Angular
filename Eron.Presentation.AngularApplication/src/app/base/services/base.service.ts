@@ -1,14 +1,12 @@
 import { Injectable } from '@angular/core';
 import { RequestOptions, Response } from '@angular/http';
 import { Observable } from 'rxjs/Rx';
-
-
-import { HttpService } from '../../theme/services/http.service';
-import { Error } from '../interfaces/error.interface';
-import { ServerResponse } from '../interfaces/server-response.interface';
-import { appVariables } from './../../app.constants';
-import { CustomErrorHandlerService } from './custom-error-handler.service';
+import { ServerResponse, Error } from '../interfaces';
+import { appVariables } from '../../app.constants';
+import { HttpService } from './http.service';
 import { HelperService } from './helper.service';
+import { CustomErrorHandlerService } from './custom-error-handler.service';
+
 @Injectable()
 export class BaseService {
   constructor(public http: HttpService, public errorHandler: CustomErrorHandlerService,
@@ -82,7 +80,7 @@ export class BaseService {
 
 
   formUrlParam(url, data) {
-    let queryString: string = '';
+    let queryString = '';
     for (const key in data) {
       if (data.hasOwnProperty(key)) {
         if (!queryString) {

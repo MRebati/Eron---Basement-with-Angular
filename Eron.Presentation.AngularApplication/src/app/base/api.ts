@@ -1,5 +1,5 @@
 import { Config } from '../app.config';
-import { environment } from '../../environments/environment.prod';
+import { environment } from '../../environments/environment';
 
 const base = environment.apiHost + 'api/';
 const websiteHost = environment.websiteHost;

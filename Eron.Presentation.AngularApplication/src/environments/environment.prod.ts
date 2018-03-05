@@ -1,5 +1,6 @@
 export const environment = {
   production: true,
   apiHost: '/',
-  websiteHost: '/'
+  websiteHost: '/',
+  env: 'prod'
 };

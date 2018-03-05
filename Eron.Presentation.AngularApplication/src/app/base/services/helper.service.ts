@@ -1,4 +1,3 @@
-import { PrimeNgDtRowSelectEvent } from '../interfaces/primeng-dt-row-select-event.interface';
 import { LoginResponse } from '../interfaces/login-response.interface';
 import { Observable } from 'rxjs/Observable';
 import { decode } from 'punycode';
@@ -9,9 +8,8 @@ import * as jwtDecode from 'jwt-decode';
 import * as _ from 'lodash';
 import { SlimLoadingBarService } from 'ng2-slim-loading-bar';
 
-import { environment } from '../../../environments';
-import { Action, Claims, ResourceActionAccess } from '../interfaces';
-import { appVariables, validationMessages, userRoleDefaultPages } from './../../';
+import { environment } from '../../../environments/environment';
+import { appVariables, validationMessages, userRoleDefaultPages } from '../../app.constants';
 import { User } from './../interfaces';
 
 
@@ -25,8 +23,7 @@ export class HelperService {
   tickerInstance: any = null;
   env: string;
   menuAccesses: string;
-  // resourceActionAccessMap: ResourceActionAccess[];
-  resourceActionAccessMap: ResourceActionAccess;
+  resourceActionAccessMap: any;
   constructor(public slimLoadingBarService: SlimLoadingBarService) {
     this.env = environment.env;
   }
@@ -60,7 +57,7 @@ export class HelperService {
   }
 
   secondsTicksCounter(): object {
-    let seconds: number = 0;
+    let seconds = 0;
     // tslint:disable-next-line:prefer-const
     let interval;
     return {
@@ -190,7 +187,6 @@ export class HelperService {
       return null;
     }
     const decoded: JwtToken = jwtDecode(accessToken.split(' ')[1]);
-    const accessMap: ResourceActionAccess[] = [];
     const resourcesAccess: any = {};
     let actions: string;
     for (const key in decoded) {
@@ -211,24 +207,22 @@ export class HelperService {
     this.menuAccesses = decoded.Menu;
   }
 
-  createResourceActionAccessMapFromJwtToken(): ResourceActionAccess {
+  createResourceActionAccessMapFromJwtToken() {
     const user: User = <User>JSON.parse(localStorage.getItem(appVariables.userLocalStorage));
     const accessesRaw: any = <any>JSON.parse(localStorage.getItem(appVariables.resourceAccessLocalStorage));
     if (!accessesRaw || !user) {
       return null;
     }
-    const accessMap: ResourceActionAccess[] = [];
-    const resourcesAccess: ResourceActionAccess = <ResourceActionAccess>{};
+    const accessMap: any[] = [];
+    const resourcesAccess = {};
     // tslint:disable-next-line:forin
     for (const key in accessesRaw) {
       const resourceName = key;
       const actions = accessesRaw[key].split(',');
-      const action: Action = { name: '', isAllowed: false };
-      resourcesAccess[resourceName] = <Claims>{};
       resourcesAccess[resourceName].actions = [];
       resourcesAccess[resourceName].userId = user.id;
-      let name: string = '';
-      let isAllowed: boolean = false;
+      let name = '';
+      let isAllowed = false;
       if (actions.indexOf(appVariables.resourceActions.addActionName) > -1) {
         name = appVariables.resourceActions.addActionName;
         isAllowed = true;
@@ -306,7 +300,7 @@ export class HelperService {
   isActionOnResourceAllowed(lookupResourceName: string, lookupActionName: string): boolean {
     if (this.resourceActionAccessMap && this.resourceActionAccessMap[lookupResourceName]) {
       const resource = this.resourceActionAccessMap[lookupResourceName];
-      const action: Action = _.find(resource.actions, {
+      const action = _.find(resource.actions, {
         isAllowed: true,
         name: lookupActionName,
       });
@@ -317,8 +311,8 @@ export class HelperService {
     return false;
   }
 
-  convertToResourceAccessMap(accessCheckBoxes: any, userId?: string): ResourceActionAccess {
-    const resourcesAccess = <ResourceActionAccess>{};
+  convertToResourceAccessMap(accessCheckBoxes: any, userId?: string) {
+    const resourcesAccess = {};
     for (const key in accessCheckBoxes) {
       if (accessCheckBoxes[key] !== undefined && accessCheckBoxes[key] !== null) {
         const resourceName = key.split('.')[0];
@@ -333,7 +327,7 @@ export class HelperService {
     return resourcesAccess;
   }
 
-  addUserIdToResourceAccessMap(accessMap: ResourceActionAccess | any, userId: string): ResourceActionAccess {
+  addUserIdToResourceAccessMap(accessMap: any, userId: string) {
     for (const key in accessMap) {
       if (accessMap[key]) {
         accessMap[key]['userId'] = userId;
@@ -381,6 +375,7 @@ export class HelperService {
 
   fakeLogin(): Observable<LoginResponse> {
     const loginRes: LoginResponse = {
+      // tslint:disable-next-line:max-line-length
       'token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbkBtdXJwaHlvaWwuY29tIiwianRpIjoiMWRlOWFjZmEtOGM0YS00MGM2LWJmMjctNTAyZDdiMmNkM2QwIiwiVUlEIjoiZjlhMjdlNmYtZjk1Yi00ZjljLTk1MTMtM2ZjMmE5YTNlZDFiIiwiaWF0IjoxNTA2NDg5MTQzLCJBZG1pbiI6IkFkbWluIiwiSGFuYUVudGl0eSI6IkNyZWF0ZSxEZWxldGUsUmVhZCxVcGRhdGUiLCJNZW51IjoiQWRtaW4sQWRtaW5EYXNoYm9hcmQiLCJuYmYiOjE1MDY0ODkxNDMsImV4cCI6MTUwNjQ5MDM0MywiaXNzIjoiUmVjcnVraXQiLCJhdWQiOiJSZWNydWtpdEF1ZGllbmNlIn0.sQva0pBTl1qA4SnX0Q4l_wz8Gq2zHTC841gYhyjtgAY',
       'expiresIn': 1200,
       'roleIds': [
@@ -444,7 +439,7 @@ export class HelperService {
     return result;
   }
 
-  togglePrimeNgDtRowsSelection(event: PrimeNgDtRowSelectEvent, lookupObject: object,
+  togglePrimeNgDtRowsSelection(event: any, lookupObject: object,
     selectedItems: any[]): any[] {
     if (!event.originalEvent.checked) {
       return _.remove(selectedItems, lookupObject);

@@ -7,8 +7,7 @@ import { Headers, Http, Request, RequestOptions, Response, XHRBackend } from '@a
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 
-
-import {AppModule} from '../../app.module';
+import { AppModule } from '../../app.module';
 import { appVariables } from '../../app.constants';
 import { HelperService } from './helper.service';
 
